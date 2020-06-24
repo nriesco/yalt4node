@@ -1,0 +1,11 @@
+{
+  "extends": "standard",
+  "rules": {
+    "semi": ["error", "always"],
+    "comma-dangle": ["warn", "never"],
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }]
+  },
+  "env": {
+    "mocha": true
+  }
+}

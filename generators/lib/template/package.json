@@ -1,0 +1,39 @@
+{
+  "name": "lib-template-temp-name-must-replace",
+  "version": "0.0.1",
+  "description": "lib-template-temp-name-must-replace - describing your awesome library here!",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "jsdoc2vuepress": "^1.1.0",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "should": "^13.2.3",
+    "standard": "^14.3.4",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "pretest": "eslint src",
+    "test": "mocha",
+    "posttest": "nyc mocha > dist/COVERAGE_RAW.md && jsdoc2vuepress",
+    "webpack": "webpack",
+    "patch": "npm version patch && npm run test && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace/issues"
+  },
+  "homepage": "https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace#readme"
+}

@@ -1,0 +1,35 @@
+{
+  "name": "yalt4node",
+  "version": "0.0.3-beta1.1",
+  "description": "yalt4node - yet another library template for nodejs",
+  "main": "index.js",
+  "bin": {
+    "yalt4node": "bin/yalt4node-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nriesco/yalt4node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nriesco/yalt4node/issues"
+  },
+  "homepage": "https://github.com/nriesco/yalt4node#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "commander": "^5.1.0",
+    "fs-extra": "^9.0.1",
+    "inquirer": "^7.2.0",
+    "lodash": "^4.17.15",
+    "ora": "^4.0.4",
+    "replace-in-file": "^6.1.0",
+    "update-notifier": "^4.1.0",
+    "yeoman-environment": "^2.10.3",
+    "yeoman-generator": "^4.10.1"
+  }
+}
