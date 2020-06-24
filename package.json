@@ -1,6 +1,6 @@
 {
   "name": "yalt4node",
-  "version": "0.0.3-beta1.1",
+  "version": "0.1.0",
   "description": "yalt4node - yet another library template for nodejs",
   "main": "index.js",
   "bin": {
