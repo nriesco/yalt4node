@@ -53,11 +53,11 @@ Also `dist/COVERAGE.md` and `dist/DOCS.md` are generated, they are (so far) full
 
 DOCS.md will look like this:
 
-![Sample DOCS]("./sampleDOCS.png")
+![Sample DOCS](./sampleDOCS.png)
 
 And COVERAGE.md will look like this:
 
-![Sample COVERAGE]("./sampleCOVERAGE.png")
+![Sample COVERAGE](./sampleCOVERAGE.png)
 
 
 ## Important references
