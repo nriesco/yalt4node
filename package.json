@@ -14,7 +14,17 @@
     "type": "git",
     "url": "git+https://github.com/nriesco/yalt4node.git"
   },
-  "keywords": [],
+  "keywords": [
+    "template",
+    "library",
+    "generator",
+    "vuejs",
+    "vuepress",
+    "vuepress-plugin",
+    "flowchart",
+    "jsdocs",
+    "jsdoc2vuepress"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
