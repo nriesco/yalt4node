@@ -8,15 +8,15 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.2.0",
+    "eslint": "^7.7.0",
     "eslint-config-standard": "^14.1.1",
     "jsdoc2vuepress": "^1.1.0",
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.1",
     "nyc": "^15.1.0",
     "should": "^13.2.3",
     "standard": "^14.3.4",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
     "pretest": "eslint src",
