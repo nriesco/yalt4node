@@ -5,7 +5,7 @@ const fsExtra = require('fs-extra');
 var Generator = require('yeoman-generator');
 const { kebabCase } = require('lodash');
 const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const { exec } = require('child_process');
 const ora = require('ora');
 
 /**
