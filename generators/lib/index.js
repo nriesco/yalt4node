@@ -9,6 +9,18 @@ const { exec } = require('child_process');
 const ora = require('ora');
 
 /**
+ * promise version of exec
+ */
+const promiseExec = async command =>{
+  return new Promise((resolve, reject) => {
+    exec(command, (err, data) => {
+      if (err) return reject(new Error(`Fail to execute '${command}'`));
+      return resolve(data);
+    })
+  })
+};
+
+/**
  * get the date in YYYY-MM-DD format
  */
 const getFormattedDate = () => {
@@ -69,10 +81,10 @@ const showNextStep = function (dirname = false) {
 
 const executeNextStep = async function(dirname = false) {
   const spinner = ora('\x1B[96m2/3 Installing...\x1B[0m').start();
-  await exec('npm i', {cwd: `${dirname}`});
+  await promiseExec('npm i', {cwd: `${dirname}`});
   spinner.stop();
   const spinner2 = ora('\x1B[96m3/3 Testing...\x1B[0m').start();
-  await exec('npm run test', {cwd: `${dirname}`});
+  await promiseExec('npm run test', {cwd: `${dirname}`});
   spinner2.stop();
 }
 
