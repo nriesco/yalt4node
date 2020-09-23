@@ -135,6 +135,7 @@ const goLibGo = async function (outPath) {
 
   const answers = await inquirer.prompt(questions); // prompt
   let camelcaseName = kebabCase(answers.camelcaseName);
+  const camelcaseNameOriginal = camelcaseName; // save it so it can be replaced-in-files later
   let { githubUsername } = answers; 
 
   let defaultDir = getCurrentDir(process.cwd());
@@ -146,7 +147,7 @@ const goLibGo = async function (outPath) {
   await fsExtra.ensureDir(path.join(outPath, camelcaseName));
   await fsExtra.copy(path.join(__dirname, 'template'), path.join(outPath, camelcaseName));
 
-  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md'], camelcaseName, githubUsername)
+  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md'], camelcaseNameOriginal, githubUsername)
 
   spinner.stop();
 
