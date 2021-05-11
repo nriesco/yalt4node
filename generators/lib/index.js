@@ -11,9 +11,9 @@ const ora = require('ora');
 /**
  * promise version of exec
  */
-const promiseExec = async command =>{
+const promiseExec = async (command, params = {}) =>{
   return new Promise((resolve, reject) => {
-    exec(command, (err, data) => {
+    exec(command, params, (err, data) => {
       if (err) return reject(new Error(`Fail to execute '${command}'`));
       return resolve(data);
     })

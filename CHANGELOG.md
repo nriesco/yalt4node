@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Options: Added / Changed / Deprecated / Removed / Fixed / Security
 
 
+## [0.1.9] - 2021-05-10
+### Fixed
+- Exec was not receiving the second parameter
+
 ## [0.1.8] - 2020-09-22
 ### Fixed
 - Promisified version of exec was not working as expected, use my own custom promisified version solved the issue
