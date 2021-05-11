@@ -36,6 +36,7 @@
     "commander": "^7.2.0",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.0.0",
+    "jsdoc2vuepress": "^1.1.2",
     "lodash": "^4.17.21",
     "ora": "^5.4.0",
     "replace-in-file": "^6.2.0",
