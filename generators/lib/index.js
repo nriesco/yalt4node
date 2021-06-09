@@ -50,9 +50,6 @@ const { version, name } = packageData
 const logoText = `\x1B[32m${name}@${version} \x1B[32m`
 
 const cleanName = function (data) {
-  // data = data.replace(new RegExp(/ /, 'g'), '-')
-  // data = data.replace(new RegExp(/---/, 'g'), '-')
-  // return data.replace(new RegExp(/--/, 'g'), '-')
   data = data.replace(/ /, 'g', '-')
   data = data.replace(/---/, 'g', '-')
   return data.replace(/--/, 'g', '-')

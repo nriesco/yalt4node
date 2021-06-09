@@ -23,11 +23,11 @@ describe('#addNumbers2', function () {
 })
 
 // // sample tests
-// lib.someMethod(3).should.not.be.containDeep({ type: 'string', length: 3 });
-// lib.someMethod(3).should.containDeep({ type: 'number' });
-// lib.someMethod(3).should.containDeep({ value: 3 });
-// lib.someMethod(3).should.deepEqual({ type: 'number', value: 3 });
-// lib.someMethod(1).should.be.ok();
-// lib.someMethod(-1).should.be.false();
-// lib.someMethod(1, 2).should.equal(3);
-// lib.someMethod(1, 2).should.be.equal(3);
+// lib.someMethod(3).should.not.be.containDeep({ type: 'string', length: 3 })
+// lib.someMethod(3).should.containDeep({ type: 'number' })
+// lib.someMethod(3).should.containDeep({ value: 3 })
+// lib.someMethod(3).should.deepEqual({ type: 'number', value: 3 })
+// lib.someMethod(1).should.be.ok()
+// lib.someMethod(-1).should.be.false()
+// lib.someMethod(1, 2).should.equal(3)
+// lib.someMethod(1, 2).should.be.equal(3)
