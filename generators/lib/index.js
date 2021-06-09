@@ -82,9 +82,21 @@ const showNextStep = function (dirname = false) {
 const executeNextStep = async function(dirname = false) {
   const spinner = ora('\x1B[96m2/3 Installing...\x1B[0m').start();
   await promiseExec('npm i', {cwd: `${dirname}`});
+  console.log('>>> here I am', dirname)
+  const params = {}
+  if (dirname) params.cwd = dirname
+  if (dirname) {
+    await promiseExec('npm i', params);
+  } else {
+    await promiseExec('npm i');
+  }
   spinner.stop();
   const spinner2 = ora('\x1B[96m3/3 Testing...\x1B[0m').start();
-  await promiseExec('npm run test', {cwd: `${dirname}`});
+  if (dirname) {
+    await promiseExec('npm run test', params);
+  } else {
+    await promiseExec('npm run test');
+  }
   spinner2.stop();
 }
 
