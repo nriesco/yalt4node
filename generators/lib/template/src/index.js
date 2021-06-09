@@ -25,8 +25,8 @@ someCondition(no)->end
 @flowend
   */
 const addNumbers = (firstNumber = 0, secondNumber = 0) => {
-  return firstNumber + secondNumber;
-};
+  return firstNumber + secondNumber
+}
 
 /**
   * @function addNumbers2
@@ -55,10 +55,10 @@ someCondition(no)->end
 @flowend
   */
 const addNumbers2 = (firstNumber = 0, secondNumber = 0) => {
-  return firstNumber + secondNumber;
-};
+  return firstNumber + secondNumber
+}
 
 module.exports = {
   addNumbers,
   addNumbers2
-};
+}

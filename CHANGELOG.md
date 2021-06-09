@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Options: Added / Changed / Deprecated / Removed / Fixed / Security
 
 
+## [0.2.0] - 2021-06-08
+### Changed
+- Started using standard (https://standardjs.com/) for eslint formatting
+
 ## [0.1.10] - 2021-06-08
 ### Fixed
 - Exec was not working ok when using the default directory (bug was introduced in v0.1.9)
