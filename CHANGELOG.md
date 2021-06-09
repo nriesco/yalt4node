@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Options: Added / Changed / Deprecated / Removed / Fixed / Security
 
 
+## [0.1.10] - 2021-06-08
+### Fixed
+- Exec was not working ok when using the default directory (bug was introduced in v0.1.9)
+
 ## [0.1.9] - 2021-05-10
 ### Fixed
 - Exec was not receiving the second parameter
