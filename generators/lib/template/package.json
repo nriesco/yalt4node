@@ -8,18 +8,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.26.0",
-    "eslint-config-standard": "^16.0.2",
-    "jsdoc2vuepress": "^1.1.0",
-    "mocha": "^8.4.0",
+    "jsdoc2vuepress": "^1.1.2",
+    "mocha": "^9.0.0",
     "nyc": "^15.1.0",
     "should": "^13.2.3",
     "standard": "^16.0.3",
-    "webpack": "^5.37.0",
-    "webpack-cli": "^4.7.0"
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
   },
   "scripts": {
-    "pretest": "eslint src",
+    "pretest": "standard",
     "test": "mocha",
     "posttest": "nyc mocha > dist/COVERAGE_RAW.md && jsdoc2vuepress",
     "webpack": "webpack",

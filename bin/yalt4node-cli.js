@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
+'use strict'
 
-require('../index.js')(process.argv);
+require('../index.js')(process.argv)
