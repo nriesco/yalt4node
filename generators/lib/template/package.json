@@ -2,7 +2,7 @@
   "name": "lib-template-temp-name-must-replace",
   "version": "0.0.1",
   "description": "lib-template-temp-name-must-replace - describing your awesome library here!",
-  "main": "src/index.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
