@@ -3,12 +3,9 @@ const program = require('commander')
 const semver = require('semver')
 const path = require('path')
 const updateNotifier = require('update-notifier')
-// const { upgrade } = require('@feathersjs/tools');
 
 const NODE_MIN_VERSION = '10.0.0'
-const meta = {
-  lib: 'Create a new lib in the current folder'
-}
+const meta = { lib: 'Create a new lib in the current folder' }
 const env = yeoman.createEnv()
 
 Object.keys(meta).forEach(name => {
@@ -26,9 +23,7 @@ module.exports = function (argv, generatorOptions = {}) {
 
   updateNotifier({ pkg }).notify()
 
-  program.version(pkg.version)
-    .usage('upgrade <version>')
-    .usage('generate [type]')
+  program.version(pkg.version).usage('upgrade <version>').usage('generate [type]')
 
   if (!semver.satisfies(process.version, `>= ${NODE_MIN_VERSION}`)) {
     console.error(`Filete CLI and generated application requires Node v${NODE_MIN_VERSION} or later.`)
@@ -46,15 +41,6 @@ module.exports = function (argv, generatorOptions = {}) {
       }
     })
 
-  // program.command('upgrade')
-  //   .alias('u')
-  //   .description('Try to automatically upgrade to the latest Filete version')
-  //   .action(version => upgrade(process.cwd()));
-
-  // program.command('*').action(() => program.help());
   program.parse(argv)
-
-  if (argv.length === 2) {
-    program.help()
-  }
+  if (argv.length === 2) program.help()
 }

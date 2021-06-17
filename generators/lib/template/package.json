@@ -21,7 +21,9 @@
     "test": "mocha",
     "posttest": "nyc mocha > dist/COVERAGE_RAW.md && jsdoc2vuepress",
     "webpack": "webpack",
-    "patch": "npm version patch && npm run test && npm publish"
+    "patch": "npm version patch && npm run test && npm publish",
+    "minor": "npm version minor && npm run test && npm publish",
+    "major": "npm version major && npm run test && npm publish"
   },
   "repository": {
     "type": "git",
