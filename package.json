@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tree": "tree --base generators/lib/template -l 5",
-    "patch": "npm version patch && npm run test && npm publish",
-    "minor": "npm version minor && npm run test && npm publish",
-    "major": "npm version major && npm run test && npm publish"
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish"
   },
   "repository": {
     "type": "git",
