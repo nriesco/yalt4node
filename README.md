@@ -22,6 +22,11 @@ Happy coding!
 This will result in a directory (`my-super-lib`) with this structure:
 
 ```txt
+├── .nyc_output
+|  └── ...
+├── cloud_function
+|  └── index.js
+|  └── index.html
 ├── COVERAGE
 |  └── index.html
 |  └── ...
@@ -36,12 +41,18 @@ This will result in a directory (`my-super-lib`) with this structure:
 |  └── index.js
 ├── test
 |  └── index.js
-├── .eslintrc.json
+├── .eslintrc.js
+├── .gcloudignore.js
+├── .gitignore.js
 ├── .mocharc.js
+├── .npmignore.js
 ├── CHANGELOG.md
+├── cloudbuild.yaml
+├── index.js
 ├── nyc.config.js
 ├── package-lock.json
 ├── package.json
+├── README-GITHUB.md
 ├── README.md
 └── webpack.config.js
 ```

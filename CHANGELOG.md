@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Options: Added / Changed / Deprecated / Removed / Fixed / Security
 
 
+## [0.4.2] - 2021-06-17
+### Added
+- Added support for Google Cloud Functions
+### Changed
+- Modified Readme, including the updated file structure
+- Added more publishing scripts
+
 ## [0.2.0] - 2021-06-08
 ### Changed
 - Started using standard (https://standardjs.com/) for eslint formatting
