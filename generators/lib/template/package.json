@@ -13,13 +13,14 @@
     "nyc": "^15.1.0",
     "should": "^13.2.3",
     "standard": "^16.0.3",
+    "vuepress": "^1.8.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2"
   },
   "scripts": {
     "pretest": "standard",
     "test": "mocha",
-    "posttest": "nyc mocha > dist/COVERAGE_RAW.md && jsdoc2vuepress",
+    "posttest": "nyc mocha > dist/COVERAGE_RAW.md && jsdoc2vuepress && vuepress build dist",
     "webpack": "webpack",
     "patch": "npm version patch && npm run test && npm publish",
     "minor": "npm version minor && npm run test && npm publish",
