@@ -41,7 +41,7 @@
     "inquirer": "^8.1.0",
     "jsdoc2vuepress": "^1.1.2",
     "lodash": "^4.17.21",
-    "ora": "^5.4.1",
+    "ora": "^6.0.0",
     "replace-in-file": "^6.2.0",
     "tree-cli": "^0.6.7",
     "update-notifier": "^5.1.0",
