@@ -64,7 +64,7 @@ const getCurrentDir = function (dir) {
 const questions = [{
   type: 'input',
   name: 'camelcaseName',
-  message: 'Lib name (use camelCase or kebab-case => will be transformed to kebab-case)',
+  message: 'Lib name (will be transformed to kebab-case)',
   default: getCurrentDir(process.cwd())
 }, {
   type: 'input',
