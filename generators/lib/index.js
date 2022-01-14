@@ -7,6 +7,7 @@ const { kebabCase } = require('lodash')
 // const util = require('util')
 const { exec } = require('child_process')
 const ora = require('ora')
+const wait = timeout => (new Promise(resolve => setTimeout(resolve, timeout)))
 
 /**
  * promise version of exec
@@ -145,6 +146,8 @@ const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmToken) 
 
 const goLibGo = async function (outPath) {
   console.log(logoText)
+  // just a workaround for the message `No change to package.json was detected. No package manager install will be executed.`
+  await wait(200)
 
   const answers = await inquirer.prompt(questions) // prompt
   let camelcaseName = kebabCase(answers.camelcaseName)
