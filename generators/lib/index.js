@@ -70,6 +70,11 @@ const questions = [{
   name: 'githubUsername',
   message: 'Enter your github username',
   default: 'nriesco'
+}, {
+  type: 'input',
+  name: 'npmUsername',
+  message: 'Enter your npm username',
+  default: 'riesco'
 }]
 
 const showNextStep = function (dirname = false) {
@@ -93,7 +98,7 @@ const executeNextStep = async function (dirname = false) {
   spinner2.stop()
 }
 
-const replaceInFiles = (thePath, filesArray, libName, githubUsername) => {
+const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmUsername) => {
   const replace = require('replace-in-file')
   const options = []
 
@@ -120,6 +125,12 @@ const replaceInFiles = (thePath, filesArray, libName, githubUsername) => {
     to: githubUsername
   })
 
+  options.push({
+    files,
+    from: /\[\[YOUR_NPM_TOKEN_GOES_HERE\]\]/g,
+    to: npmUsername
+  })
+
   const executeChanges = async (options) => {
     try {
       for (const option of options) {
@@ -139,7 +150,7 @@ const goLibGo = async function (outPath) {
   const answers = await inquirer.prompt(questions) // prompt
   let camelcaseName = kebabCase(answers.camelcaseName)
   const camelcaseNameOriginal = camelcaseName // save it so it can be replaced-in-files later
-  const { githubUsername } = answers
+  const { githubUsername, npmUsername } = answers
 
   const defaultDir = getCurrentDir(process.cwd())
   const isDefaultDir = (answers.camelcaseName === defaultDir)
@@ -150,7 +161,7 @@ const goLibGo = async function (outPath) {
   await fsExtra.ensureDir(path.join(outPath, camelcaseName))
   await fsExtra.copy(path.join(__dirname, 'template'), path.join(outPath, camelcaseName))
 
-  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md'], camelcaseNameOriginal, githubUsername)
+  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md', 'README-GITHUB.md', '.npmrc'], camelcaseNameOriginal, githubUsername, npmUsername)
 
   spinner.stop()
 
