@@ -72,9 +72,8 @@ const questions = [{
   default: 'nriesco'
 }, {
   type: 'input',
-  name: 'npmUsername',
-  message: 'Enter your npm username',
-  default: 'riesco'
+  name: 'npmToken',
+  message: 'Enter your npm token'
 }]
 
 const showNextStep = function (dirname = false) {
@@ -98,7 +97,7 @@ const executeNextStep = async function (dirname = false) {
   spinner2.stop()
 }
 
-const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmUsername) => {
+const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmToken) => {
   const replace = require('replace-in-file')
   const options = []
 
@@ -128,7 +127,7 @@ const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmUsernam
   options.push({
     files,
     from: /\[\[YOUR_NPM_TOKEN_GOES_HERE\]\]/g,
-    to: npmUsername
+    to: npmToken
   })
 
   const executeChanges = async (options) => {
@@ -150,7 +149,7 @@ const goLibGo = async function (outPath) {
   const answers = await inquirer.prompt(questions) // prompt
   let camelcaseName = kebabCase(answers.camelcaseName)
   const camelcaseNameOriginal = camelcaseName // save it so it can be replaced-in-files later
-  const { githubUsername, npmUsername } = answers
+  const { githubUsername, npmToken } = answers
 
   const defaultDir = getCurrentDir(process.cwd())
   const isDefaultDir = (answers.camelcaseName === defaultDir)
@@ -161,7 +160,7 @@ const goLibGo = async function (outPath) {
   await fsExtra.ensureDir(path.join(outPath, camelcaseName))
   await fsExtra.copy(path.join(__dirname, 'template'), path.join(outPath, camelcaseName))
 
-  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md', 'README-GITHUB.md', '.npmrc'], camelcaseNameOriginal, githubUsername, npmUsername)
+  await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md', 'README-GITHUB.md', '.npmrc'], camelcaseNameOriginal, githubUsername, npmToken)
 
   spinner.stop()
 
