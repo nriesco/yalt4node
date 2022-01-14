@@ -142,7 +142,7 @@ const goLibGo = async function (outPath) {
   const { githubUsername } = answers
 
   const defaultDir = getCurrentDir(process.cwd())
-  const isDefaultDir = (camelcaseName === defaultDir)
+  const isDefaultDir = (answers.camelcaseName === defaultDir)
   if (isDefaultDir) camelcaseName = ''
 
   const spinner = ora('\x1B[96m1/3 Copying files...\x1B[0m').start()
