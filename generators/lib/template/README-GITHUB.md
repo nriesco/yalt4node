@@ -1,6 +1,9 @@
 # Setup Github
 
-1. Create your repository `lib-template-temp-name-must-replace` [https://github.com/new](https://github.com/new)
+Create your repository `lib-template-temp-name-must-replace` [https://github.com/new](https://github.com/new)
+
+.. and then run the following commands (you'll find a similar script in `scripts/githubSetup.sh`):
+
 1. `git init`
 1. `git add .`
 1. `git commit -m "First commit"`
