@@ -1,4 +1,4 @@
-# README
+# Readme
 
 describing your awesome library here!
 
