@@ -8,7 +8,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "jsdoc2vuepress": "^1.1.2",
+    "jsdoc2vuepress": "^1.1.7",
     "mocha": "^9.1.3",
     "nyc": "^15.1.0",
     "should": "^13.2.3",
