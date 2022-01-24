@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Options: Added / Changed / Deprecated / Removed / Fixed / Security
 
 
+## [0.5.3] - 2022-06-17
+### Fixed
+- Github init script was not working when the project did not exist
+### Changed
+- Some minor improvements and refactoring
+
 ## [0.5.0] - 2021-06-17
 ### Fixed
 - Vuepress was not working, upgrading to version 2 fixed it
