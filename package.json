@@ -39,13 +39,13 @@
     "commander": "^8.3.0",
     "fs-extra": "^10.0.0",
     "inquirer": "^8.2.0",
-    "jsdoc2vuepress": "^1.1.2",
+    "jsdoc2vuepress": "^1.1.12",
     "lodash": "^4.17.21",
     "ora": "^5.4.1",
     "replace-in-file": "^6.3.2",
     "tree-cli": "^0.6.7",
     "update-notifier": "^5.1.0",
-    "yeoman-environment": "^3.8.1",
-    "yeoman-generator": "^5.5.2"
+    "yeoman-environment": "^3.9.1",
+    "yeoman-generator": "^5.6.1"
   }
 }
