@@ -1,4 +1,4 @@
-# lib-template-temp-name-must-replace
+# Readme
 
 describing your awesome library here!
 

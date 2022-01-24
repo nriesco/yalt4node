@@ -1,19 +1,28 @@
 # Setup Github
 
-1. Create your repository `lib-template-temp-name-must-replace` [https://github.com/new](https://github.com/new)
-1. `git init`
-1. `git add .`
-1. `git commit -m "First commit"`
-1. `git remote add origin https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace`
-1. `git push origin main`
+## Script
 
+Just run `./scripts/githubSetup.sh`
 
-describing your awesome library here!
+## From command line
 
-## Install
+```sh
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace.git
+git push -u origin main
+```
 
-`npm i lib-template-temp-name-must-replace`
+## Create the project in Github first
 
-## Usage
+Create your repository `lib-template-temp-name-must-replace` [https://github.com/new](https://github.com/new)
 
-@TODO
+... and then:
+
+```sh
+git remote add origin https://github.com/[[YOUR_GITHUB_USERNAME_HERE]]/lib-template-temp-name-must-replace.git
+git branch -M main
+git push -u origin main
+```
