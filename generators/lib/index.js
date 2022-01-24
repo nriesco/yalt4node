@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const inquirer = require('inquirer')
+// const inquirer = require('inquirer')
 const fsExtra = require('fs-extra')
 const Generator = require('yeoman-generator')
 const { kebabCase } = require('lodash')
@@ -40,8 +40,12 @@ module.exports = class extends Generator {
     this.props = { name: process.cwd().split(path.sep).pop() }
   }
 
+  async prompting () {
+    this.answers = await this.prompt(questions)
+  }
+
   someMethodAnyName () {
-    goLibGo(this.destinationRoot() + '')
+    goLibGo(this.destinationRoot() + '', this.answers)
   }
 }
 
@@ -82,24 +86,22 @@ const questions = [{
   message: 'Enter your npm token'
 }]
 
-const showNextStep = function (dirname = false) {
+const goodBye = function (dirname = false) {
   console.log('\x1B[0m')
   console.log('\x1B[32mDone!\x1B[0m')
   console.log('\x1B[96mHappy coding!\x1B[0m')
   console.log('\x1B[0m')
 }
 
-const executeNextStep = async function (dirname = false) {
+const installAndTest = async function (dirname = false) {
   const spinner = ora('\x1B[96m2/3 Installing...\x1B[0m').start()
-
   const params = {}
   if (dirname) params.cwd = dirname // set cwd only when dirname is valid
   await promiseExec('npm i', params)
-
   spinner.stop()
+
   const spinner2 = ora('\x1B[96m3/3 Testing...\x1B[0m').start()
   await promiseExec('npm run test', params)
-
   spinner2.stop()
 }
 
@@ -155,12 +157,12 @@ const replaceInFiles = (thePath, filesArray, libName, githubUsername, npmToken, 
   executeChanges(options)
 }
 
-const goLibGo = async function (outPath) {
+const goLibGo = async function (outPath, answers) {
   console.log(logoText)
   // just a workaround for the message `No change to package.json was detected. No package manager install will be executed.`
   await wait(200)
 
-  const answers = await inquirer.prompt(questions) // prompt
+  // const answers = await inquirer.prompt(questions) // prompt
   let camelcaseName = kebabCase(answers.camelcaseName)
   const camelcaseNameOriginal = camelcaseName // save it so it can be replaced-in-files later
   const { githubUsername, npmToken, npmOrganization } = answers
@@ -175,15 +177,16 @@ const goLibGo = async function (outPath) {
   await fsExtra.copy(path.join(__dirname, 'template'), path.join(outPath, camelcaseName))
 
   await replaceInFiles(path.join(outPath, camelcaseName), ['package.json', 'package-lock.json', 'CHANGELOG.md', 'README.md', 'README-GITHUB.md', '.npmrc'], camelcaseNameOriginal, githubUsername, npmToken, npmOrganization)
+  await replaceInFiles(path.join(outPath, camelcaseName, 'scripts'), ['*.sh'], camelcaseNameOriginal, githubUsername, npmToken, npmOrganization)
 
   spinner.stop()
 
   if (isDefaultDir) {
-    await executeNextStep()
+    await installAndTest()
   } else {
-    await executeNextStep(camelcaseName)
+    await installAndTest(camelcaseName)
   }
 
   // end
-  showNextStep()
+  goodBye()
 }
